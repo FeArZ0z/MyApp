@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:text="@string/decks"
+    android:textSize="30sp"
+    android:visibility="visible"
+    app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.355"
+    tools:visibility="visible" />
+
+<Button
+android:id="@+id/backbutton"
+android:layout_width="129dp"
+android:layout_height="69dp"
+android:layout_marginEnd="52dp"
+android:text="@string/back"
+app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+app:layout_constraintEnd_toStartOf="@+id/textView"
+app:layout_constraintHorizontal_bias="0.0"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.0" />
+
+<Button
+android:id="@+id/addDeckButton"
+android:layout_width="129dp"
+android:layout_height="69dp"
+android:text="ADD DECK"
+app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="1.0"
+app:layout_constraintStart_toEndOf="@+id/textView"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+
+        android:layout_width="545dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at rutrum turpis, sed varius lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla lobortis semper libero, non tempus sapien mattis id. Sed varius metus turpis, in auctor tortor facilisis quis. Nunc eleifend elit purus, in luctus nisl pharetra quis. Donec ut volutpat enim, at lobortis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Duis molestie aliquam augue eget laoreet. Pellentesque et lorem id risus egestas interdum. Vestibulum sed pharetra ligula. Nullam a orci vitae neque placerat dignissim vitae sed diam. Aliquam sodales erat velit. Phasellus ut maximus magna. Nunc eu erat ex. Sed dapibus ac sapien rutrum posuere. Curabitur erat ex, commodo at pulvinar sed, lobortis ut urna. Nunc sit amet tincidunt mauris, hendrerit aliquam justo.
+
+Ut malesuada, orci a euismod interdum, orci odio fringilla massa, gravida dignissim neque nibh eget sapien. Aliquam erat volutpat. Donec risus eros, venenatis in ante non, condimentum faucibus ligula. Etiam in neque vitae velit mollis facilisis et quis nibh. Nunc est mi, maximus ac sodales at, ultrices a elit. Phasellus pellentesque est ut auctor finibus. Aenean auctor eros lorem, et cursus lacus vehicula vel. Duis blandit sem ut ex accumsan, in eleifend ex ullamcorper. Phasellus lobortis id nulla id consequat. Suspendisse commodo diam nec nisl luctus, non pellentesque leo sollicitudin. Suspendisse mattis cursus turpis, in suscipit urna egestas a. Nam faucibus lorem eget purus congue, ac auctor nisi vehicula. Duis lacinia porta tortor. Nunc porta scelerisque mauris ut fermentum. Aliquam et ipsum eros.
+
+Etiam aliquet faucibus turpis, non sodales augue fermentum nec. Donec condimentum risus vitae dui aliquam interdum. Vestibulum elementum leo venenatis porta molestie. Cras ut lorem nec diam sollicitudin lobortis. Quisque quis convallis ante. Donec faucibus mollis orci. Nunc laoreet sapien mi, non accumsan ipsum fermentum vitae. Nunc in egestas enim. Nullam sollicitudin facilisis leo non ultricies. Phasellus malesuada lacus nibh, ac imperdiet ligula pharetra vitae. Mauris varius turpis vel nisi iaculis, et venenatis tellus ullamcorper. Integer pulvinar tellus eget nisl hendrerit, sed suscipit sapien fringilla. Ut at lorem eros. Ut mollis dignissim nibh, vel accumsan enim dictum sed.
+
+Ut arcu odio, maximus convallis quam in, dictum porta erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc accumsan sagittis posuere. Sed varius cursus congue. Sed mollis felis id massa consequat fringilla. Ut imperdiet mauris elit, vel auctor mi rutrum ut. Phasellus nulla neque, fermentum non enim eget, condimentum elementum ligula. Integer lacus arcu, rutrum dictum ultrices sit amet, venenatis sit amet urna. Donec sit amet gravida justo, pulvinar eleifend dui. Quisque non magna faucibus, mollis sem ac, hendrerit metus. Ut posuere quam mauris, aliquet scelerisque diam congue in. Ut consectetur blandit pulvinar. Suspendisse nulla turpis, dignissim interdum urna quis, eleifend mollis magna. Suspendisse sodales pulvinar aliquam.
+"
+            android:textSize="24sp">
+
+        </TextView>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

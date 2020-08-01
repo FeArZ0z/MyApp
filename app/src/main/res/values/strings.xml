@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SecondTry</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="play">Play Game</string>
+    <string name="add_deck">Add Deck</string>
+    <string name="add_question">Add Card</string>
+    <string name="decks">My Decks</string>
+    <string name="back">Go Back</string>
+    <string name="add_player">Add Player</string>
+    <string name="deck_list">deck_list</string>
+</resources>
