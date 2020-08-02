@@ -64,6 +64,21 @@ public class PlayerSelection extends AppCompatActivity {
                 } else{
 
                 }
+                if (TextUtils.isEmpty(playerFour.getText().toString())){
+                    playercounter += 1;
+                } else{
+
+                }
+                if (TextUtils.isEmpty(playerFour.getText().toString())){
+                    playercounter += 1;
+                } else{
+
+                }
+                if (TextUtils.isEmpty(playerFour.getText().toString())){
+                    playercounter += 1;
+                } else{
+
+                }
 
                 if (playercounter < 2){
                     Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
