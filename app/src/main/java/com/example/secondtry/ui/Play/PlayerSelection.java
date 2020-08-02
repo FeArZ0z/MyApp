@@ -2,6 +2,7 @@ package com.example.secondtry.ui.Play;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +23,7 @@ public class PlayerSelection extends AppCompatActivity {
         setContentView(R.layout.play_players_6);
 
 
-        EditText playerOne = (EditText) findViewById(R.id.player_one);
+        final EditText playerOne = (EditText) findViewById(R.id.player_one);
         EditText playerTwo = (EditText) findViewById(R.id.player_two);
         EditText playerThree = (EditText) findViewById(R.id.player_three);
         EditText playerFour = (EditText) findViewById(R.id.player_four);
@@ -40,47 +41,74 @@ public class PlayerSelection extends AppCompatActivity {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View startGame) {
-                countingPlayers();
+                //countingPlayers();
+                if (TextUtils.isEmpty(playerOne.getText().toString())){
+                    Toast.makeText(PlayerSelection.this, "empty", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(PlayerSelection.this, "proceed", Toast.LENGTH_SHORT).show();
+                };
             }
         });
 
     }
-
+/**
     public void countingPlayers(){
-        int counter2 = 0;
-        int counter = 5;
-        if (playerOneX.matches("")){
-            counter2 = counter - 1;
-            counter = counter2;
-            Toast.makeText(this, "You did not enter a username", Toast.LENGTH_SHORT).show();
-        }
-        if (playerTwoX.matches("")){
-            counter2 = counter - 1;
-            counter = counter2;
-        }
-        if (playerThreeX.matches("")){
-            counter2 = counter - 1;
-            counter = counter2;
-        }
-        if (playerFourX.matches("")){
-            counter2 = counter - 1;
-            counter = counter2;
-        }
-        if (playerFiveX.matches("")){
-            counter2 = counter - 1;
-            counter = counter2;
+        int counter = 0;
+        int counter2;
+        int counter3 = 2;
+        if (TextUtils.isEmpty(playerOne.getText().toString())){
+            counter += 1;
         }
 
-        if (counter < 2){
-            Toast.makeText(getApplicationContext(), "More Players are needed!", Toast.LENGTH_SHORT).show();
+        if (counter == 1){
+            Toast.makeText(PlayerSelection.this, "Empty", Toast.LENGTH_SHORT).show();
+
         } else {
-            startGame();
+            Toast.makeText(PlayerSelection.this, "else cond", Toast.LENGTH_SHORT).show();
         }
-    }
+/**
+            if (playerOneX.matches("")) {
+                counter3+=1;
+            } else {
+                counter2 = counter + 1;
+                counter = counter2;
+            }
+            if (playerTwoX.matches("")) {
+               counter3 +=1;
+            } else {
+                counter2 = counter + 1;
+                counter = counter2;
+            }
+            if (playerThreeX.matches("")) {
 
+            } else {
+                counter2 = counter + 1;
+                counter = counter2;
+            }
+            if (playerFourX.matches("")) {
+
+            } else {
+                counter2 = counter + 1;
+                counter = counter2;
+            }
+            if (playerFiveX.matches("")) {
+
+            } else {
+                counter2 = counter + 1;
+                counter = counter2;
+            }
+
+
+        if (counter3 >=2){
+            startGame();
+        } else {
+            Toast.makeText(getApplicationContext(), "More Players are needed!", Toast.LENGTH_SHORT).show();
+        }
+    }**/
+/**
     public void startGame(){
         Intent startGame = new Intent(this, Play.class);
         startActivity(startGame);
     }
-
+**/
 }
