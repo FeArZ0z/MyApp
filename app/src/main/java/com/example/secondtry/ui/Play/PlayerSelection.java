@@ -17,6 +17,9 @@ public class PlayerSelection extends AppCompatActivity {
     String playerOneX, playerTwoX, playerThreeX, playerFourX, playerFiveX, playerSixX;
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix;
     Button startGame;
+    Boolean bOne, bTwo, bThree, bFour, bFive, bSix = true;
+    Boolean bOT, bTwTr, bTrFo, bFoFi, bFiSi, bAll = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -30,61 +33,63 @@ public class PlayerSelection extends AppCompatActivity {
         final EditText playerFive = (EditText) findViewById(R.id.player_five);
         final EditText playerSix = (EditText) findViewById(R.id.player_six);
 
-        playerOneX = playerOne.getText().toString();
-        playerTwoX = playerTwo.getText().toString();
-        playerThreeX = playerThree.getText().toString();
-        playerFourX = playerFour.getText().toString();
-        playerFiveX = playerFive.getText().toString();
-        playerSixX = playerSix.getText().toString();
+
 
         startGame = (Button) findViewById(R.id.play_button_players);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View startGame) {
 
-                /**
-                if (TextUtils.isEmpty(playerOne.getText().toString())){
-                    Toast.makeText(PlayerSelection.this, "empty", Toast.LENGTH_SHORT).show();
-                } else{
-                    Toast.makeText(PlayerSelection.this, "proceed", Toast.LENGTH_SHORT).show();
-                };**/
+                //don't touch it, it is working
                 int playercounter = 0;
                 if (TextUtils.isEmpty(playerOne.getText().toString())){
-                    playercounter += 1;
+                    bOne = true;
                 } else{
-
+                    playercounter += 1;
+                    bOne = false;
                 }
                 if (TextUtils.isEmpty(playerTwo.getText().toString())){
-                    playercounter += 1;
+                    bTwo = true;
                 } else{
-
+                    playercounter += 1;
+                    bTwo = false;
                 }
                 if (TextUtils.isEmpty(playerThree.getText().toString())){
-                    playercounter += 1;
+                    bThree = true;
                 } else{
-
+                    playercounter += 1;
+                    bThree = false;
                 }
                 if (TextUtils.isEmpty(playerFour.getText().toString())){
-                    playercounter += 1;
+                    bFour = true;
                 } else{
-
-                }
-                if (TextUtils.isEmpty(playerFour.getText().toString())){
                     playercounter += 1;
-                } else{
-
+                    bFour = false;
                 }
-                if (TextUtils.isEmpty(playerFour.getText().toString())){
+                if (TextUtils.isEmpty(playerFive.getText().toString())){
+                    bFive = true;
+                } else{
                     playercounter += 1;
-                } else{
-
+                    bFive = false;
                 }
+                if (TextUtils.isEmpty(playerSix.getText().toString())){
+                    bSix = true;
+                } else{
+                    playercounter += 1;
+                    bSix = false;
+                }
+
+
 
                 if (playercounter < 2){
+
+                    Toast.makeText(PlayerSelection.this, "Not enough Players!", Toast.LENGTH_SHORT).show();
+
+                } else if (bAll == false) {
+                    Toast.makeText(PlayerSelection.this, "Please choose consecutive Players", Toast.LENGTH_SHORT).show();
+                } else if (playercounter >= 2 && bAll == false){
                     Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
                     startActivity(startGameNow);
-                } else if (playercounter >= 2){
-                    Toast.makeText(PlayerSelection.this, "Not enough Players!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
