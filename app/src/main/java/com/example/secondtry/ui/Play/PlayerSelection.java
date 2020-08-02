@@ -111,52 +111,20 @@ public class PlayerSelection extends AppCompatActivity {
                     } else startingGameNow();
                 } catch (UnsupportedOperationException e){
                     errMsg();
+                }
+
+
             }
-
-
-
-
-
-                    /**{
-                    if ((bOne == false) && (bTwo == false)){
-                        bOT = false;
-                        if ((playercounter >=3) && (bOT == false) && (bThree == false)){
-                            bTwTr = false;
-                            if ((playercounter >= 4) && (bTwTr == false) && (bFour == false)){
-                                bTrFo = false;
-                                if ((playercounter >= 5) && (bTrFo == false) && (bFive == false)){
-                                    bFoFi = false;
-                                    if ((playercounter == 6) && (bFoFi == false) && (bSix == false)){
-                                        bFiSi = false;
-                                    } else {errMsg();}
-                                } else {errMsg();}
-                            } else {errMsg();}
-                        } else {errMsg();}
-                        if(!bOT && !bTwTr && !bTrFo && !bFoFi && !bFiSi){
-                            Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
-                            startActivity(startGameNow);
-                        }
-                    } else {errMsg();}**/
-
-
-
-
-
-
-
-              /**      Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
-                    startActivity(startGameNow);**/
-
-               }
         });
 
     }
 
+    // starts the game
     public void startingGameNow(){
         Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
         startActivity(startGameNow);
     }
-
+    // provides an error Message if players are not consecutively put in
     public void errMsg(){
         Toast.makeText(PlayerSelection.this, "Please choose consecutive Players!", Toast.LENGTH_SHORT).show();
 
