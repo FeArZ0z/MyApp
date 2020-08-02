@@ -24,11 +24,11 @@ public class PlayerSelection extends AppCompatActivity {
 
 
         final EditText playerOne = (EditText) findViewById(R.id.player_one);
-        EditText playerTwo = (EditText) findViewById(R.id.player_two);
-        EditText playerThree = (EditText) findViewById(R.id.player_three);
-        EditText playerFour = (EditText) findViewById(R.id.player_four);
-        EditText playerFive = (EditText) findViewById(R.id.player_five);
-        EditText playerSix = (EditText) findViewById(R.id.player_six);
+        final EditText playerTwo = (EditText) findViewById(R.id.player_two);
+        final EditText playerThree = (EditText) findViewById(R.id.player_three);
+        final EditText playerFour = (EditText) findViewById(R.id.player_four);
+        final EditText playerFive = (EditText) findViewById(R.id.player_five);
+        final EditText playerSix = (EditText) findViewById(R.id.player_six);
 
         playerOneX = playerOne.getText().toString();
         playerTwoX = playerTwo.getText().toString();
@@ -41,74 +41,39 @@ public class PlayerSelection extends AppCompatActivity {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View startGame) {
-                //countingPlayers();
+
+                /**
                 if (TextUtils.isEmpty(playerOne.getText().toString())){
                     Toast.makeText(PlayerSelection.this, "empty", Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(PlayerSelection.this, "proceed", Toast.LENGTH_SHORT).show();
-                };
+                };**/
+                int playercounter = 0;
+                if (TextUtils.isEmpty(playerOne.getText().toString())){
+                    playercounter += 1;
+                } else{
+
+                }
+                if (TextUtils.isEmpty(playerTwo.getText().toString())){
+                    playercounter += 1;
+                } else{
+
+                }
+                if (TextUtils.isEmpty(playerThree.getText().toString())){
+                    playercounter += 1;
+                } else{
+
+                }
+
+                if (playercounter < 2){
+                    Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
+                    startActivity(startGameNow);
+                } else if (playercounter >= 2){
+                    Toast.makeText(PlayerSelection.this, "Not enough Players!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
     }
-/**
-    public void countingPlayers(){
-        int counter = 0;
-        int counter2;
-        int counter3 = 2;
-        if (TextUtils.isEmpty(playerOne.getText().toString())){
-            counter += 1;
-        }
 
-        if (counter == 1){
-            Toast.makeText(PlayerSelection.this, "Empty", Toast.LENGTH_SHORT).show();
-
-        } else {
-            Toast.makeText(PlayerSelection.this, "else cond", Toast.LENGTH_SHORT).show();
-        }
-/**
-            if (playerOneX.matches("")) {
-                counter3+=1;
-            } else {
-                counter2 = counter + 1;
-                counter = counter2;
-            }
-            if (playerTwoX.matches("")) {
-               counter3 +=1;
-            } else {
-                counter2 = counter + 1;
-                counter = counter2;
-            }
-            if (playerThreeX.matches("")) {
-
-            } else {
-                counter2 = counter + 1;
-                counter = counter2;
-            }
-            if (playerFourX.matches("")) {
-
-            } else {
-                counter2 = counter + 1;
-                counter = counter2;
-            }
-            if (playerFiveX.matches("")) {
-
-            } else {
-                counter2 = counter + 1;
-                counter = counter2;
-            }
-
-
-        if (counter3 >=2){
-            startGame();
-        } else {
-            Toast.makeText(getApplicationContext(), "More Players are needed!", Toast.LENGTH_SHORT).show();
-        }
-    }**/
-/**
-    public void startGame(){
-        Intent startGame = new Intent(this, Play.class);
-        startActivity(startGame);
-    }
-**/
 }
