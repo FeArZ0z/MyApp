@@ -18,7 +18,7 @@ public class PlayerSelection extends AppCompatActivity {
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix;
     Button startGame;
     Boolean bOne, bTwo, bThree, bFour, bFive, bSix = true;
-    Boolean bOT, bTwTr, bTrFo, bFoFi, bFiSi, bAll = false;
+    Boolean bOT, bTwTr, bTrFo, bFoFi, bFiSi, bAll = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -81,18 +81,84 @@ public class PlayerSelection extends AppCompatActivity {
 
 
 
+
+
                 if (playercounter < 2){
 
                     Toast.makeText(PlayerSelection.this, "Not enough Players!", Toast.LENGTH_SHORT).show();
-
-                } else if (bAll == false) {
-                    Toast.makeText(PlayerSelection.this, "Please choose consecutive Players", Toast.LENGTH_SHORT).show();
-                } else if (playercounter >= 2 && bAll == false){
-                    Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
-                    startActivity(startGameNow);
-                }
+                // checks if there are consecutive players
+                } else try {
+                    if (playercounter >=2){
+                        if (bOne || bTwo){
+                            throw new UnsupportedOperationException();
+                        } else if (playercounter >= 3){
+                            if (bThree){
+                                throw new UnsupportedOperationException();
+                            } else if (playercounter >= 4){
+                                if (bFour){
+                                    throw new UnsupportedOperationException();
+                                } else if (playercounter >= 5){
+                                    if (bFive){
+                                        throw new UnsupportedOperationException();
+                                    } else if (playercounter == 6){
+                                        if (bSix){
+                                            throw new UnsupportedOperationException();
+                                        } else startingGameNow();
+                                    } else startingGameNow();
+                                } else startingGameNow();
+                            } else startingGameNow();
+                        } else startingGameNow();
+                    } else startingGameNow();
+                } catch (UnsupportedOperationException e){
+                    errMsg();
             }
+
+
+
+
+
+                    /**{
+                    if ((bOne == false) && (bTwo == false)){
+                        bOT = false;
+                        if ((playercounter >=3) && (bOT == false) && (bThree == false)){
+                            bTwTr = false;
+                            if ((playercounter >= 4) && (bTwTr == false) && (bFour == false)){
+                                bTrFo = false;
+                                if ((playercounter >= 5) && (bTrFo == false) && (bFive == false)){
+                                    bFoFi = false;
+                                    if ((playercounter == 6) && (bFoFi == false) && (bSix == false)){
+                                        bFiSi = false;
+                                    } else {errMsg();}
+                                } else {errMsg();}
+                            } else {errMsg();}
+                        } else {errMsg();}
+                        if(!bOT && !bTwTr && !bTrFo && !bFoFi && !bFiSi){
+                            Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
+                            startActivity(startGameNow);
+                        }
+                    } else {errMsg();}**/
+
+
+
+
+
+
+
+              /**      Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
+                    startActivity(startGameNow);**/
+
+               }
         });
+
+    }
+
+    public void startingGameNow(){
+        Intent startGameNow = new Intent(PlayerSelection.this, Play.class);
+        startActivity(startGameNow);
+    }
+
+    public void errMsg(){
+        Toast.makeText(PlayerSelection.this, "Please choose consecutive Players!", Toast.LENGTH_SHORT).show();
 
     }
 
