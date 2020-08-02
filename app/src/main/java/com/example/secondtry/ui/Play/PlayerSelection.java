@@ -13,8 +13,8 @@ import com.example.secondtry.R;
 
 public class PlayerSelection extends AppCompatActivity {
 
-    EditText playerOneX, playerTwoX, playerThreeX, playerFourX, playerFiveX, playerSixX;
-    String playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix;
+    String playerOneX, playerTwoX, playerThreeX, playerFourX, playerFiveX, playerSixX;
+    EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix;
     Button startGame;
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -22,18 +22,19 @@ public class PlayerSelection extends AppCompatActivity {
         setContentView(R.layout.play_players_6);
 
 
-        playerOneX = (EditText) findViewById(R.id.player_one);
-        playerTwoX = (EditText) findViewById(R.id.player_two);
-        playerThreeX = (EditText) findViewById(R.id.player_three);
-        playerFourX = (EditText) findViewById(R.id.player_four);
-        playerFiveX = (EditText) findViewById(R.id.player_five);
-        playerSixX = (EditText) findViewById(R.id.player_six);
-        playerOne = playerOneX.toString();
-        playerTwo = playerTwoX.toString();
-        playerThree = playerThreeX.toString();
-        playerFour = playerFourX.toString();
-        playerFive = playerFiveX.toString();
-        playerSix = playerSixX.toString();
+        EditText playerOne = (EditText) findViewById(R.id.player_one);
+        EditText playerTwo = (EditText) findViewById(R.id.player_two);
+        EditText playerThree = (EditText) findViewById(R.id.player_three);
+        EditText playerFour = (EditText) findViewById(R.id.player_four);
+        EditText playerFive = (EditText) findViewById(R.id.player_five);
+        EditText playerSix = (EditText) findViewById(R.id.player_six);
+
+        playerOneX = playerOne.getText().toString();
+        playerTwoX = playerTwo.getText().toString();
+        playerThreeX = playerThree.getText().toString();
+        playerFourX = playerFour.getText().toString();
+        playerFiveX = playerFive.getText().toString();
+        playerSixX = playerSix.getText().toString();
 
         startGame = (Button) findViewById(R.id.play_button_players);
         startGame.setOnClickListener(new View.OnClickListener() {
@@ -46,35 +47,40 @@ public class PlayerSelection extends AppCompatActivity {
     }
 
     public void countingPlayers(){
- /**       int counter = 6;
-        if (playerOne.isEmpty()){
-            counter = counter - 1;
+        int counter2 = 0;
+        int counter = 5;
+        if (playerOneX.matches("")){
+            counter2 = counter - 1;
+            counter = counter2;
+            Toast.makeText(this, "You did not enter a username", Toast.LENGTH_SHORT).show();
         }
-        if (playerTwo.isEmpty()){
-            counter = counter - 1;
+        if (playerTwoX.matches("")){
+            counter2 = counter - 1;
+            counter = counter2;
         }
-        if (playerThree.isEmpty()){
-            counter = counter - 1;
+        if (playerThreeX.matches("")){
+            counter2 = counter - 1;
+            counter = counter2;
         }
-        if (playerFour.isEmpty()){
-            counter = counter - 1;
+        if (playerFourX.matches("")){
+            counter2 = counter - 1;
+            counter = counter2;
         }
-        if (playerFive.isEmpty()){
-            counter = counter - 1;
-        }
-        if (playerSix.isEmpty()){
-            counter = counter - 1;
+        if (playerFiveX.matches("")){
+            counter2 = counter - 1;
+            counter = counter2;
         }
 
         if (counter < 2){
             Toast.makeText(getApplicationContext(), "More Players are needed!", Toast.LENGTH_SHORT).show();
         } else {
-            Intent startGame = new Intent(this, Play.class);
-            startActivity(startGame);
-        }**/
+            startGame();
+        }
+    }
+
+    public void startGame(){
         Intent startGame = new Intent(this, Play.class);
         startActivity(startGame);
     }
-
 
 }
