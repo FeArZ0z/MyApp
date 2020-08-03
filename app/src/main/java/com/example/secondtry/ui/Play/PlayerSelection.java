@@ -88,22 +88,20 @@ public class PlayerSelection extends AppCompatActivity {
                     Toast.makeText(PlayerSelection.this, "Not enough Players!", Toast.LENGTH_SHORT).show();
                 // checks if there are consecutive players
                 } else try {
-                    if (playercounter >=2){
-                        if (bOne || bTwo){
+                    if (bOne || bTwo){
+                        throw new UnsupportedOperationException();
+                    } else if (playercounter >= 3){
+                        if (bThree){
                             throw new UnsupportedOperationException();
-                        } else if (playercounter >= 3){
-                            if (bThree){
+                        } else if (playercounter >= 4){
+                            if (bFour){
                                 throw new UnsupportedOperationException();
-                            } else if (playercounter >= 4){
-                                if (bFour){
+                            } else if (playercounter >= 5){
+                                if (bFive){
                                     throw new UnsupportedOperationException();
-                                } else if (playercounter >= 5){
-                                    if (bFive){
+                                } else if (playercounter == 6){
+                                    if (bSix){
                                         throw new UnsupportedOperationException();
-                                    } else if (playercounter == 6){
-                                        if (bSix){
-                                            throw new UnsupportedOperationException();
-                                        } else startingGameNow();
                                     } else startingGameNow();
                                 } else startingGameNow();
                             } else startingGameNow();
