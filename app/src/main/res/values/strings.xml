@@ -12,5 +12,7 @@
     <string name="deck_list">deck_list</string>
     <string name="delete">Delete Question</string>
     <string name="save">Save Deck</string>
+    <string name="save_conf">Save Questions</string>
+    <string name="option">Choose a kind of Card</string>
 
 </resources>

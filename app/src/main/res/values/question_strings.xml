@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="question_array">
+        <item>Choose wisely...</item>
+        <item>Caliente</item>
+        <item>Normal</item>
+        <item>Explanation</item>
+        <item>Vote</item>
+        <item>Competition</item>
+    </string-array>
+</resources>
