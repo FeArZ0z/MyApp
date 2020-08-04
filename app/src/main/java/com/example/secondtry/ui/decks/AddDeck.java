@@ -38,10 +38,10 @@ import javax.xml.transform.stream.StreamResult;
 
 public class AddDeck<root_element> extends AppCompatActivity {
 
+    public static String inputDeckName;
     EditText editDeckName;
     Button test, backbutton;
     String filename;
-    protected String inputDeckName;
     public AddDeck() throws ParserConfigurationException {
     }
 
@@ -76,7 +76,7 @@ public class AddDeck<root_element> extends AppCompatActivity {
                 if (editDeckName.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "input: " + inputDeckName, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getApplicationContext(), "input: " + inputDeckName, Toast.LENGTH_SHORT).show();
                     openNewDeck(inputDeckName);
                 }
 
@@ -90,12 +90,17 @@ public class AddDeck<root_element> extends AppCompatActivity {
         startActivity(openDecks);
     }
 
-    private void openNewDeck(String name){
-       // EditDeck editDeck = new EditDeck(name);
+    public void openNewDeck(String name){
+      //  EditDeck editDeck = new EditDeck(name);
         Intent editDeck2 = new Intent(this, EditDeck.class);
         startActivity(editDeck2);
 
+
     }
+
+ /**   public String getDeckName(){
+        return inputDeckName;
+    }**/
 
 }
 

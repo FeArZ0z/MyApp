@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.decks.Decks" />
         <activity android:name=".ui.decks.AddDeck" />
+        <activity android:name=".ui.decks.EditDeck"/>
         <activity android:name=".ui.Play.Play" />
         <activity android:name=".ui.Play.PlayerSelection" />
 
