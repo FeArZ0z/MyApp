@@ -5,9 +5,12 @@
     <string name="title_notifications">Notifications</string>
     <string name="play">Play Game</string>
     <string name="add_deck">Add Deck</string>
-    <string name="add_question">Add Card</string>
+    <string name="add_question">Add Question</string>
     <string name="decks">My Decks</string>
     <string name="back">Go Back</string>
     <string name="add_player">Add Player</string>
     <string name="deck_list">deck_list</string>
+    <string name="delete">Delete Question</string>
+    <string name="save">Save Deck</string>
+
 </resources>

@@ -17,8 +17,14 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -34,8 +40,8 @@ public class AddDeck<root_element> extends AppCompatActivity {
 
     EditText editDeckName;
     Button test, backbutton;
-    String deckName, filename;
-
+    String filename;
+    protected String inputDeckName;
     public AddDeck() throws ParserConfigurationException {
     }
 
@@ -63,12 +69,15 @@ public class AddDeck<root_element> extends AppCompatActivity {
             public void onClick(View v) {
 
                 ((TextView) AddDeck.this.findViewById(R.id.editDeckName)).setText(editDeckName.getText().toString());
+                inputDeckName = editDeckName.getText().toString();
+
 
 
                 if (editDeckName.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "input: " + editDeckName.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "input: " + inputDeckName, Toast.LENGTH_SHORT).show();
+                    openNewDeck(inputDeckName);
                 }
 
             }
@@ -76,28 +85,17 @@ public class AddDeck<root_element> extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------
-    public void openDecks() {
+    private void openDecks() {
         Intent openDecks = new Intent(this, Decks.class);
         startActivity(openDecks);
     }
-/**
-    DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
-    DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
-    Document document = documentBuilder.newDocument();
 
-    //root element for a new deck
-    Element root_element = document.createElement(editDeckName.getText().toString());
- //  document.appendChild(root_element);
+    private void openNewDeck(String name){
+       // EditDeck editDeck = new EditDeck(name);
+        Intent editDeck2 = new Intent(this, EditDeck.class);
+        startActivity(editDeck2);
 
-// ---------------------------------------
-/**
+    }
 
-    public void fileMagic(){
-        filename = editDeckName.getText().toString();
-        File file = new File(getBaseContext().getFilesDir(), filename);
-        try (FileOutputStream fos = getBaseContext().openFileOutput(filename, Context.MODE_PRIVATE)){
-            fos.write()
-        }
-    }**/
 }
 
