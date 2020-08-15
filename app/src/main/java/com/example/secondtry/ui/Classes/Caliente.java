@@ -1,5 +1,11 @@
 package com.example.secondtry.ui.Classes;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Caliente extends Template {
@@ -41,6 +47,7 @@ public class Caliente extends Template {
     }
 
     public String getTextTwo() {
+        textTwo =
         return textTwo;
     }
 
@@ -63,4 +70,20 @@ public class Caliente extends Template {
     public int hashCode() {
         return Objects.hash(userOne, userTwo, textOne, textTwo);
     }
+
+    private void parseXML() throws XmlPullParserException {
+        XmlPullParserFactory parserFactory;
+        parserFactory = XmlPullParserFactory.newInstance();
+        XmlPullParser parser = parserFactory.newPullParser();
+        InputStream is = getAssets().open{"examples_caliente.xml"};
+        parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+        parser.setInput(is, null);
+        processParsing(parser);
+
+    }
+
+    private void processParsing(XmlPullParser parser){
+        ArrayList<caliente_template> text_one = new Array
+    }
 }
+

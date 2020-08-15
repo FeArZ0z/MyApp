@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.NestedScrollingParent;
 
 import com.example.secondtry.R;
 
@@ -31,7 +32,8 @@ public class TypeChoice extends AppCompatActivity {
         adapter.setDropDownViewResource((android.R.layout.simple_spinner_dropdown_item));
         spinner.setAdapter(adapter);
 
-                        
+        NestedScrollingParent nestedScroll = (NestedScrollingParent) findViewById(R.id.scroll_questions);
+
                 
 
 
