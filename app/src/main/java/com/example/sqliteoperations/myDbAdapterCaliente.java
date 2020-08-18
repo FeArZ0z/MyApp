@@ -7,6 +7,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import static android.content.Context.MODE_PRIVATE;
+import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
+
 
 public class myDbAdapterCaliente {
     myDbHelper myhelper;
@@ -62,7 +65,7 @@ public class myDbAdapterCaliente {
 
     static class myDbHelper extends SQLiteOpenHelper
     {
-        private static final String DATABASE_NAME = "myDatabaseCaliente";    // Database Name
+        private static final String DATABASE_NAME = "myDatabase";    // Database Name
         private static final String TABLE_NAME  = "Caliente";   // Table Name
         private static final int DATABASE_Version = 1;    // Database Version
         private static final String UID="_idCaliente";     // Column I (Primary Key)
@@ -72,6 +75,7 @@ public class myDbAdapterCaliente {
                 " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+ TEXTONECAL +" VARCHAR(255) ,"+ SIPSCAL +" VARCHAR(2));";
         private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
         private Context context;
+
 
         public myDbHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_Version);
@@ -97,5 +101,11 @@ public class myDbAdapterCaliente {
                 Message.message(context,""+e);
             }
         }
+
+
+    }
+
+    public void createDataBase(){
+        SQLiteDatabase mydatabase = openOrCreateDatabase("myDatabase", null ,null);
     }
 }

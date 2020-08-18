@@ -11,6 +11,7 @@ import com.example.secondtry.ui.Play.Play;
 import com.example.secondtry.ui.Play.PlayerSelection;
 import com.example.secondtry.ui.decks.Decks;
 import com.example.secondtry.ui.decks.TypeChoice;
+import com.example.sqliteoperations.myDbAdapterCaliente;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
- 
+
+        myDbAdapterCaliente myDb = new myDbAdapterCaliente(this);
+        myDb.createDataBase();
 
         // button to start game
         play_game = (Button) findViewById(R.id.playbutton);
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 
 
