@@ -98,9 +98,6 @@ public class AddDeck<root_element> extends AppCompatActivity {
 
     }
 
- /**   public String getDeckName(){
-        return inputDeckName;
-    }**/
 
 }
 

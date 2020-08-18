@@ -13,7 +13,7 @@
         <activity android:name=".ui.decks.AddDeck" />
         <activity android:name=".ui.decks.EditDeck"/>
         <activity android:name=".ui.decks.TypeChoice"/>
-
+        <activity android:name=".ui.ownQuestions.AddOwnQuestion"/>
 
         <activity android:name=".ui.Play.Play" />
         <activity android:name=".ui.Play.PlayerSelection" />

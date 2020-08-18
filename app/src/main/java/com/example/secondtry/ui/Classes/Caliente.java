@@ -47,7 +47,6 @@ public class Caliente extends Template {
     }
 
     public String getTextTwo() {
-        textTwo =
         return textTwo;
     }
 
@@ -71,19 +70,6 @@ public class Caliente extends Template {
         return Objects.hash(userOne, userTwo, textOne, textTwo);
     }
 
-    private void parseXML() throws XmlPullParserException {
-        XmlPullParserFactory parserFactory;
-        parserFactory = XmlPullParserFactory.newInstance();
-        XmlPullParser parser = parserFactory.newPullParser();
-        InputStream is = getAssets().open{"examples_caliente.xml"};
-        parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-        parser.setInput(is, null);
-        processParsing(parser);
 
-    }
-
-    private void processParsing(XmlPullParser parser){
-        ArrayList<caliente_template> text_one = new Array
-    }
 }
 
