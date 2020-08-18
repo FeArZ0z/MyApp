@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <card>
+        <id>1</id>
+        <textOne></textOne>
+        <sips></sips>
+    </card>
+
+</resources>

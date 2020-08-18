@@ -10,17 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.secondtry.ui.Play.Play;
 import com.example.secondtry.ui.Play.PlayerSelection;
 import com.example.secondtry.ui.decks.Decks;
+import com.example.secondtry.ui.decks.TypeChoice;
 
 public class MainActivity extends AppCompatActivity {
 
     Button play_game;
     Button decks;
+    Button backbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
-
 
         // button to start game
         play_game = (Button) findViewById(R.id.playbutton);
@@ -53,4 +55,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
+    public void goBack(){
+        Intent back = new Intent(this, TypeChoice.class);
+        startActivity(back);
+    }
 }
