@@ -8,9 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class myDbAdapter {
+public class myDbAdapterCaliente {
     myDbHelper myhelper;
-    public myDbAdapter(Context context)
+    public myDbAdapterCaliente(Context context)
     {
         myhelper = new myDbHelper(context);
     }
@@ -62,7 +62,7 @@ public class myDbAdapter {
 
     static class myDbHelper extends SQLiteOpenHelper
     {
-        private static final String DATABASE_NAME = "myDatabase";    // Database Name
+        private static final String DATABASE_NAME = "myDatabaseCaliente";    // Database Name
         private static final String TABLE_NAME  = "Caliente";   // Table Name
         private static final int DATABASE_Version = 1;    // Database Version
         private static final String UID="_idCaliente";     // Column I (Primary Key)

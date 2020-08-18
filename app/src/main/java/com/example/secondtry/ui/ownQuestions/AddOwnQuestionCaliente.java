@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.secondtry.R;
 import com.example.secondtry.ui.decks.TypeChoice;
+import com.example.sqliteoperations.myDbAdapterCaliente;
 
 import org.w3c.dom.Text;
 
@@ -42,12 +43,21 @@ public class AddOwnQuestionCaliente extends AppCompatActivity {
                 if (testTextOne(textOneCal) || testFieldTwo(sipsCal)){
 
                 } else {
-                    //save the question
+                   writeToDb();
                 }
             }
         });
     }
 
+
+    //writing to database
+
+    public void writeToDb(){
+        myDbAdapterCaliente myDb = new myDbAdapterCaliente(this);
+        myDb.
+
+        if (myDb.)
+    }
     //tests
     public boolean testTextOne(TextView textOneCal){
         if (textOneCal.length() == 0){
