@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.secondtry">
-
+    package="com.example.secondtry" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +14,7 @@
         <activity android:name=".ui.decks.EditDeck"/>
         <activity android:name=".ui.decks.TypeChoice"/>
         <activity android:name=".ui.ownQuestions.AddOwnQuestionCaliente"/>
+
 
         <activity android:name=".ui.Play.Play" />
         <activity android:name=".ui.Play.PlayerSelection" />

@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.File;
+
 import static android.content.Context.MODE_PRIVATE;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
@@ -62,9 +64,9 @@ public class myDbAdapterCaliente {
         int count =db.update(myDbHelper.TABLE_NAME,contentValues, myDbHelper.TEXTONECAL+" = ?",whereArgs );
         return count;
     }
-
     static class myDbHelper extends SQLiteOpenHelper
     {
+        
         private static final String DATABASE_NAME = "myDatabase";    // Database Name
         private static final String TABLE_NAME  = "Caliente";   // Table Name
         private static final int DATABASE_Version = 1;    // Database Version
@@ -105,7 +107,7 @@ public class myDbAdapterCaliente {
 
     }
 
-    public void createDataBase(){
-        SQLiteDatabase mydatabase = openOrCreateDatabase("myDatabase", null ,null);
-    }
+
+
+
 }

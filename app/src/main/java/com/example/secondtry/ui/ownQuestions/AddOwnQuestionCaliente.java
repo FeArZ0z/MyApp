@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Scroller;
 import android.widget.Spinner;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.secondtry.R;
+import com.example.secondtry.ui.decks.EditDeck;
 import com.example.secondtry.ui.decks.TypeChoice;
 import com.example.sqliteoperations.myDbAdapterCaliente;
 
@@ -22,6 +24,8 @@ import org.w3c.dom.Text;
 
 public class AddOwnQuestionCaliente extends AppCompatActivity {
 
+    public static String textOne, textSips, test;
+    myDbAdapterCaliente myDb = new myDbAdapterCaliente(this);
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -30,20 +34,29 @@ public class AddOwnQuestionCaliente extends AppCompatActivity {
         String cardType = TypeChoice.contentForNew;
 
         Button saveQuestion = (Button) findViewById(R.id.button_add_own);
-        final TextView textOneCal = (TextView) findViewById(R.id.text_one_cal);
-        final TextView sipsCal = (TextView) findViewById(R.id.sips_cal);
+        final EditText textOneCal = (EditText) findViewById(R.id.text_one_cal);
+        final EditText sipsCal = (EditText) findViewById(R.id.sips_cal);
         textOneCal.setScroller(new Scroller(this));
         textOneCal.setMaxWidth(10);
         textOneCal.setVerticalScrollBarEnabled(true);
         textOneCal.setMovementMethod(new ScrollingMovementMethod());
 
+
         saveQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (testTextOne(textOneCal) || testFieldTwo(sipsCal)){
 
+                //converts contents of EditText into strings
+                ((TextView) AddOwnQuestionCaliente.this.findViewById(R.id.text_one_cal)).setText(textOneCal.getText().toString());
+                ((TextView) AddOwnQuestionCaliente.this.findViewById(R.id.sips_cal)).setText(sipsCal.getText().toString());
+                textOne = textOneCal.getText().toString();
+                textSips = sipsCal.getText().toString();
+
+                //tests if empty, else writes to DB
+                if (testTextOne(textOneCal) || testFieldTwo(sipsCal)){
+                //Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
                 } else {
-                   writeToDb();
+                    writeToDb(textOne, textSips);
                 }
             }
         });
@@ -52,12 +65,13 @@ public class AddOwnQuestionCaliente extends AppCompatActivity {
 
     //writing to database
 
-    public void writeToDb(){
-        myDbAdapterCaliente myDb = new myDbAdapterCaliente(this);
-        myDb.
+    public void writeToDb(String textOneCal, String sipsCal){
 
-        if (myDb.)
+        myDb.insertData(textOneCal, sipsCal);
+        //Toast.makeText(getApplicationContext(), textOneCal + sipsCal, Toast.LENGTH_LONG).show();
+
     }
+
     //tests
     public boolean testTextOne(TextView textOneCal){
         if (textOneCal.length() == 0){

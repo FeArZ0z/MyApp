@@ -23,6 +23,7 @@ public class EditDeck extends AppCompatActivity {
 
     TextView deckName;
     Button backbutton;
+    String deckNameTest;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class EditDeck extends AppCompatActivity {
         String deckName = AddDeck.inputDeckName;
 
 
-        Button backbutton = (Button) findViewById(R.id.back_add_deck);
+        backbutton = (Button) findViewById(R.id.back_add_deck);
         backbutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -47,7 +48,8 @@ public class EditDeck extends AppCompatActivity {
         });
 
         TextView deckNameTitle = (TextView) findViewById(R.id.deckName);
-//        Toast.makeText(getApplicationContext(), "input: " + deckName, Toast.LENGTH_SHORT).show();
+        deckNameTest = deckNameTitle.getText().toString();
+        Toast.makeText(getApplicationContext(), "input: " + deckNameTest, Toast.LENGTH_SHORT).show();
 
         deckNameTitle.setText((CharSequence) deckName);
     }

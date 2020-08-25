@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myDbAdapterCaliente myDb = new myDbAdapterCaliente(this);
-        myDb.createDataBase();
 
         // button to start game
         play_game = (Button) findViewById(R.id.playbutton);
@@ -47,10 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     }
-
-
-
 
 
     public void openPlay(){
