@@ -16,8 +16,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="281dp"
-        android:layout_height="43dp"
+        android:layout_width="221dp"
+        android:layout_height="75dp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="3dp"
@@ -77,5 +77,23 @@
         android:text="@string/save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="478dp"
+        android:layout_height="877dp"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="162dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

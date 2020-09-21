@@ -6,47 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/player_six"
+    <Button
+        android:id="@+id/play_button_players"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Player 6"
-        android:inputType="textPersonName"
+        android:layout_marginTop="24dp"
+        android:text="Play"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_five" />
-
-    <EditText
-        android:id="@+id/player_three"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Player 3"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_two" />
-
-    <EditText
-        android:id="@+id/player_one"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="112dp"
-        android:ems="10"
-        android:hint="Player 1"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/player_six" />
 
     <EditText
         android:id="@+id/player_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Player 2"
@@ -55,22 +29,34 @@
         app:layout_constraintTop_toBottomOf="@+id/player_one" />
 
     <EditText
-        android:id="@+id/player_four"
+        android:id="@+id/player_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Player 4"
+        android:hint="Player 3"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_three" />
+        app:layout_constraintTop_toBottomOf="@+id/player_two" />
+
+    <EditText
+        android:id="@+id/player_six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Player 6"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_five" />
 
     <EditText
         android:id="@+id/player_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Player 5"
@@ -78,14 +64,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_four" />
 
-    <Button
-        android:id="@+id/play_button_players"
+    <EditText
+        android:id="@+id/player_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Play"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Player 1"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_six" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/player_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Player 4"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_three" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

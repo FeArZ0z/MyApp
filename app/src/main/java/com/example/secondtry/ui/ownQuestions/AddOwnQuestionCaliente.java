@@ -1,5 +1,6 @@
 package com.example.secondtry.ui.ownQuestions;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -68,7 +69,10 @@ public class AddOwnQuestionCaliente extends AppCompatActivity {
     public void writeToDb(String textOneCal, String sipsCal){
 
         myDb.insertData(textOneCal, sipsCal);
-        //Toast.makeText(getApplicationContext(), textOneCal + sipsCal, Toast.LENGTH_LONG).show();
+   //     Toast.makeText(getApplicationContext(), textOneCal + " " + sipsCal, Toast.LENGTH_LONG).show();
+        String test = myDb.getData();
+        Toast.makeText(getApplicationContext(), test , Toast.LENGTH_LONG).show();
+        saveAndBack();
 
     }
 
@@ -92,5 +96,10 @@ public class AddOwnQuestionCaliente extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Too many sips! You will die!", Toast.LENGTH_SHORT).show();
             return true;
         } else return false;
+    }
+
+    public void saveAndBack(){
+        Intent goBackAndSave = new Intent(this, TypeChoice.class);
+        startActivity(goBackAndSave);
     }
 }

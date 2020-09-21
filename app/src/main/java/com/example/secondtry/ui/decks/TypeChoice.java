@@ -47,33 +47,7 @@ public class TypeChoice extends AppCompatActivity implements AdapterView.OnItemS
             }
         });
 
-
-/**
-        final String spinnerContent = spinner.getSelectedItem().toString();
-        contentForNew = spinnerContent;
-        //String sCaliente, sNormal, sExplanation, sVote, sCompetition;
-        final String sCaliente = "Caliente";
-        final String sNormal = "Normal";
-        final String sExplanation = "Explanation";
-        final String sVote = "Vote";
-        final String sCompetition = "Competition";
-
-                switch (contentForNew){
-                    case sCaliente:
-                        setContentView(R.layout.deck_create_add_caliente);
-
-                        Toast.makeText(getApplicationContext(), "Not yet Implemented", Toast.LENGTH_SHORT).show();
-                    case sNormal:
-                        Toast.makeText(getApplicationContext(), "Not yet Implemented", Toast.LENGTH_SHORT).show();
-                    case sExplanation:
-                        Toast.makeText(getApplicationContext(), "Not yet Implemented", Toast.LENGTH_SHORT).show();
-                    case sVote:
-                        Toast.makeText(getApplicationContext(), "Not yet Implemented", Toast.LENGTH_SHORT).show();
-                    case sCompetition:
-                        Toast.makeText(getApplicationContext(), "Not yet Implemented", Toast.LENGTH_SHORT).show();
-                }
- **/
-        }
+    }
        // NestedScrollingParent nestedScroll = (NestedScrollingParent) findViewById(R.id.scroll_questions);
 
 
