@@ -10,21 +10,26 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.NestedScrollingParent;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.secondtry.R;
 import com.example.secondtry.ui.ownQuestions.AddOwnQuestionCaliente;
-import com.example.secondtry.ui.ownQuestions.AddOwnQuestionCaliente;
+import com.example.sqliteoperations.myDbAdapterCaliente;
 
 public class TypeChoice extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static String contentForNew;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deck_create_add);
         Button addOwnButton = (Button) findViewById(R.id.button_add_own3);
         Button savebutton = (Button) findViewById(R.id.button_save_deck);
-
 
 
         savebutton.setOnClickListener(new View.OnClickListener(){
@@ -43,12 +48,13 @@ public class TypeChoice extends AppCompatActivity implements AdapterView.OnItemS
         addOwnButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //addOwnQuestion();
+                addOwnQuestion();
             }
         });
 
     }
-       // NestedScrollingParent nestedScroll = (NestedScrollingParent) findViewById(R.id.scroll_questions);
+
+
 
 
 
@@ -58,8 +64,9 @@ public class TypeChoice extends AppCompatActivity implements AdapterView.OnItemS
     }
 
     public void addOwnQuestion(){
-        Intent addNewQuestion = new Intent(this, AddOwnQuestionCaliente.class);
-        startActivity(addNewQuestion);
+        //if recycler on this or this add a different type of question
+        Intent addNewQuestionCaliente = new Intent(this, AddOwnQuestionCaliente.class);
+        startActivity(addNewQuestionCaliente);
     }
 
     @Override
@@ -67,8 +74,10 @@ public class TypeChoice extends AppCompatActivity implements AdapterView.OnItemS
         if (pos == 0) {
             Toast.makeText(getApplicationContext(), "Choose a category", Toast.LENGTH_SHORT).show();
         } else if (pos == 1) {
-            Toast.makeText(getApplicationContext(), "Choice: caliente", Toast.LENGTH_SHORT).show();
-            addOwnQuestion();
+            //Toast.makeText(getApplicationContext(), "Choice: caliente", Toast.LENGTH_SHORT).show();
+            //addOwnQuestionCal();
+            Intent changeViewCal = new Intent(this, TypeChoiceCal.class);
+            startActivity(changeViewCal);
         } else if (pos == 2) {
             Toast.makeText(getApplicationContext(), "Choice: normal", Toast.LENGTH_SHORT).show();
         } else if (pos == 3) {

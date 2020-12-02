@@ -76,7 +76,7 @@ public class AddDeck<root_element> extends AppCompatActivity {
                 if (editDeckName.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Required Field", Toast.LENGTH_SHORT).show();
                 } else {
-                   Toast.makeText(getApplicationContext(), "input: " + inputDeckName, Toast.LENGTH_SHORT).show();
+                   //Toast.makeText(getApplicationContext(), "input: " + inputDeckName, Toast.LENGTH_SHORT).show();
                     openNewDeck(inputDeckName);
                 }
 
